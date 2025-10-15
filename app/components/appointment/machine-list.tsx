@@ -33,7 +33,7 @@ export const MachineList = ({ machines }: MachineListProps) => {
             title={machine}
           />
         ))}
-        <OtherSections op={thisOp} item={thisItem} />
+        {/* <OtherSections op={thisOp} item={thisItem} /> */}
       </div>
     </div>
   );

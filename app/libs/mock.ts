@@ -1,24 +1,20 @@
 export const machineList = [
-  "IBARMIA",
-  "D800",
-  "D1250",
-  "YCM",
-  "E320",
-  "CT40",
-  "INDEX",
-  "MAZAK",
+  "CNC1",
+  "CNC2",
+  "CNC3",
+  "CNC4",
+  "TORNO-1",
+  "TORNO-2",
+  "TORNO-3",
+  "TORNO-4",
 ];
 
 export const operadores = [
-  "RICARDO",
-  "ANTONIO",
-  "RAUL",
-  "WILLIAN",
-  "JOSE",
-  "MATHEUS",
-  "JONAS",
-  "LEANDRO",
-  "OSEIAS",
+  "OPERADOR-1",
+  "OPERADOR-2",
+  "OPERADOR-3",
+  "OPERADOR-4",
+  "OPERADOR-5",
 ];
 
 export type radioValueTypes = {
