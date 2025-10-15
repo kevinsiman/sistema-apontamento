@@ -42,7 +42,7 @@ export default function Home() {
   const machine = params?.machine?.toString() ?? "";
 
   const { data, error, isLoading, refetch, isSuccess } = useQuery<
-    QrcodeDataType[],
+    QrcodeDataType[] | [],
     Error
   >({
     queryKey: ["dados", machine],
@@ -55,12 +55,17 @@ export default function Home() {
   if (isLoading) return <Loading />;
   if (error) return <p>Erro: {(error as Error).message}</p>;
 
-  if (isSuccess && data) {
+  if (isSuccess && data !== undefined && data.length === 0) {
+    return <MachineStart machine={machine} />;
+  }
+
+  if (isSuccess && data !== undefined && data.length > 0) {
+    console.log(data);
     const machineData: QrcodeDataType = data[0];
 
     return (
       <>
-        {machineData.fim ? (
+        {machineData?.fim ? (
           <MachineStart machine={machine} />
         ) : (
           <MachineStarted machine={machine} data={machineData} />
